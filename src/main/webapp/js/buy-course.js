@@ -19,5 +19,5 @@ db.settings({
 var pathname = window.location.pathname;
 console.log("path name: " + pathname);
 $("#buy").click(function () {
-
+    
 })
