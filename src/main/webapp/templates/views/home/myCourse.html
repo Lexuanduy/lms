@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/home}" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>My course</title>
+    <link rel="stylesheet" href="../../../css/my-course.css">
+</head>
+
+<body>
+    <div layout:fragment="content">
+        <div class="breadcrumb-container">
+            <div class="container">
+                <section class="k-courses-header-list">
+                    <div class="course-summary">
+                        <ul>
+                            <li>
+                                <p>Số khóa học</p>
+                                <div class="img-courses img-count-courses"></div>
+                                <span class="course-number">8</span>
+                            </li>
+                            <li>
+                                <p>Tài liệu</p>
+                                <div class="img-courses img-document-courses"></div>
+                                <span class="document-number">7</span>
+                            </li>
+                            <li>
+                                <p>Câu hỏi</p>
+                                <div class="img-courses img-question-courses"></div>
+                                <span class="question-number">0</span>
+                            </li>
+                            <li>
+                                <p>Kpoint</p>
+                                <div class="img-courses img-kpoint-courses"></div>
+                                <span class="kpoint-number"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="body-courses-section">
+                    <div id="menu-courses-mob">
+                        <!--?//= Url::toRoute(['/user/order/active-cod']) ?-->
+                        <!--?//= Url::toRoute(['/user/profile/edit']); ?-->
+                        <div id="scroll-tab-menu-course">
+                            <ul class="nav nav-tabs container hidden-md-up" id="mobile-course-menu" style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">
+                                <li id="courses-tab" class="active-tab">
+                                    <a href="/trang-ca-nhan/khoa-hoc?is_started=0#courses-list" data-ajax="" data-target="#mycourses-main">
+                                        Bài học
+                                    </a>
+                                </li>
+                                <li id="document-tab">
+                                    <a href="/trang-ca-nhan/tai-lieu#document" data-ajax="" data-target="#mycourses-main">
+                                        Tài liệu
+                                    </a>
+                                </li>
+                                <li id="question-tab">
+                                    <a href="/trang-ca-nhan/cau-hoi-giang-vien#question-answer" data-ajax="" data-target="#mycourses-main">
+                                        Câu hỏi
+                                    </a>
+                                </li>
+                                <li id="summary-tab">
+                                    <a href="/user/profile/profile">
+                                        Tài khoản
+                                    </a>
+                                </li>
+                                <li id="history-kpoint">
+                                    <a href="/trang-ca-nhan/diem">
+                                        Điểm Kpoint
+                                    </a>
+                                </li>
+                                <li id="history-voucher">
+                                    <a href="/trang-ca-nhan/voucher-coupon">
+                                        Voucher
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+                        $("body").on("ajax.updated", "#mobile-course-menu li", function (e) {
+                            $("#mobile-course-menu li").removeClass("active-tab");
+                            $(e.currentTarget).addClass("active-tab");
+                            setHeightDiv();
+                        });
+                    </script>
+                    <style>
+                        #btn-voucher-free a {
+                            background-image: -moz-linear-gradient(90deg, #ffd800 0%, #f6ff02 100%);
+                            background-image: -webkit-linear-gradient(90deg, #ffd800 0%, #f6ff02 100%);
+                            background-image: -ms-linear-gradient(90deg, #ffd800 0%, #f6ff02 100%);
+                            box-shadow: 0 4px 5px 0 rgba(142, 62, 24, .14);
+                            border-radius: 30px;
+                            color: #f91808;
+                            font-weight: 700;
+                            padding: 12px 40px 8px;
+                            position: relative;
+                            bottom: 5px
+                        }
+
+                        #btn-voucher-free:hover {
+                            background-color: transparent !important;
+                            border: none !important;
+                            opacity: .8
+                        }
+
+                        @media screen and (max-width:425px) {
+                            #scroll-tab-menu-course {}
+                            #btn-voucher-free {
+                                position: absolute;
+                                top: -60px;
+                                left: 38%;
+                                transform: translateX(-50%)
+                            }
+                        }
+
+                        @media screen and (max-width:375px) {
+                            #btn-voucher-free {
+                                left: 34%;
+                                transform: translateX(-50%)
+                            }
+                        }
+
+                        @media screen and (max-width:325px) {
+                            #btn-voucher-free {
+                                left: 29%;
+                                transform: translateX(-50%)
+                            }
+                        }
+                    </style>
+                    <div class="container">
+                        <ul class="nav nav-tabs container hidden-sm-down" id="menu-courses">
+                            <li id="courses-tab" class="active-tab">
+                                <a href="/trang-ca-nhan/khoa-hoc" data-target="#mycourses-main">
+                                    Khóa học
+                                </a>
+                            </li>
+                            <li id="document-tab">
+                                <a href="/trang-ca-nhan/tai-lieu" data-target="#mycourses-main">
+                                    Tài liệu
+                                </a>
+                            </li>
+                            <li id="question-tab">
+                                <a href="/trang-ca-nhan/cau-hoi-giang-vien" data-target="#mycourses-main">
+                                    Hỏi giảng viên
+                                </a>
+                            </li>
+                            <li id="discuss-tab">
+                                <a href="/trang-ca-nhan/thao-luan" data-target="#mycourses-main">
+                                    Thảo luận
+                                </a>
+                            </li>
+                            <li id="point-tab">
+                                <a href="/trang-ca-nhan/diem" data-target="#mycourses-main">
+                                    Điểm Kpoint
+                                </a>
+                            </li>
+                            <li id="code-tab">
+                                <a href="/trang-ca-nhan/voucher-coupon" data-target="#mycourses-main">
+                                    Voucher
+                                </a>
+                            </li>
+                            <li id="trade-tab">
+                                <a href="/trang-ca-nhan/giao-dich/chua-hoan-thanh" data-target="#mycourses-main">
+                                    Giao dịch
+                                </a>
+                            </li>
+                        </ul>
+                        <script type="text/javascript">
+                            $("body").on("ajax.updated", "#menu-courses li", function (e) {
+                                $("#menu-courses li").removeClass("active-tab");
+                                $(e.currentTarget).addClass("active-tab");
+                                setHeightDiv();
+                                CoursesAction.Init();
+                                CoursesAction.ResizeBoxProduct("#mycourses-buy");
+                            });
+                        </script>
+                        <style>
+                            #btn-voucher-free a {
+                                background-image: -moz-linear-gradient(90deg, #ffd800 0%, #f6ff02 100%);
+                                background-image: -webkit-linear-gradient(90deg, #ffd800 0%, #f6ff02 100%);
+                                background-image: -ms-linear-gradient(90deg, #ffd800 0%, #f6ff02 100%);
+                                box-shadow: 0 4px 5px 0 rgba(142, 62, 24, .14);
+                                border-radius: 30px;
+                                color: #f91808;
+                                font-weight: 700;
+                                padding: 12px 40px 8px;
+                                position: relative;
+                                bottom: 5px
+                            }
+
+                            #btn-voucher-free:hover {
+                                background-color: transparent !important;
+                                border: none !important;
+                                opacity: .8
+                            }
+                        </style>
+                        <div class="tab-content clearfix col-xs-12" id="mycourses-main">
+                            <div id="w0" data-pjax-container="" data-pjax-push-state="" data-pjax-timeout="1000">
+                                <div id="mycourses" class="clearfix">
+                                    <ul class="nav nav-tabs">
+                                        <li class="active-tab">
+                                            <a href="/trang-ca-nhan/khoa-hoc">Tất cả (8)</a>
+                                        </li>
+                                        <!-- <li>
+                                            <a href="/trang-ca-nhan/khoa-hoc/chua-hoc">Chưa học (3)</a>
+                                        </li>
+                                        <li>
+                                            <a href="/trang-ca-nhan/khoa-hoc/dang-hoc">Đang học (5)</a>
+                                        </li> -->
+                                    </ul>
+                                    <style>
+                                        #mycourses .search-filter {
+                                            display: inline-block;
+                                            float: right;
+                                            width: 460px;
+                                            position: relative;
+                                            top: 20px
+                                        }
+
+                                        #mycourses form .input-group-btn button {
+                                            border: none
+                                        }
+
+                                        #mycourses form .input-group-btn button:focus {
+                                            outline: none;
+                                            background: none
+                                        }
+
+                                        #mycourses form input {
+                                            border: none;
+                                            border-radius: 5px
+                                        }
+
+                                        #mycourses form input:focus {
+                                            outline: none !important;
+                                            box-shadow: none !important
+                                        }
+
+                                        #mycourses form .input-group-btn button:hover {
+                                            background: none;
+                                            color: #387836
+                                        }
+
+                                        #mycourses ul.nav {
+                                            display: inline-block
+                                        }
+
+                                        #mycourses .search-filter button {
+                                            background: none;
+                                            border: 1px solid #ddd
+                                        }
+
+                                        #mycourses .search-filter form select {
+                                            width: 200px;
+                                            height: 37px;
+                                            padding: 5px;
+                                            margin: 0;
+                                            -webkit-border-radius: 4px;
+                                            -moz-border-radius: 4px;
+                                            border-radius: 4px;
+                                            border: 1px solid #ddd;
+                                            color: #888;
+                                            outline: none;
+                                            display: inline-block;
+                                            -webkit-appearance: none;
+                                            -moz-appearance: none;
+                                            appearance: none;
+                                            cursor: pointer
+                                        }
+
+                                        @media screen and (-webkit-min-device-pixel-ratio:0) {
+                                            select {
+                                                padding-right: 18px
+                                            }
+                                        }
+
+                                        #mycourses .search-filter form label {
+                                            position: relative
+                                        }
+
+                                        #mycourses .search-filter form label:after {
+                                            content: '<>';
+                                            font: 11px "Consolas", monospace;
+                                            color: #aaa;
+                                            -webkit-transform: rotate(90deg);
+                                            -moz-transform: rotate(90deg);
+                                            -ms-transform: rotate(90deg);
+                                            transform: rotate(90deg);
+                                            right: 8px;
+                                            top: 11px;
+                                            padding: 0 0 2px;
+                                            border-bottom: 1px solid #ddd;
+                                            position: absolute;
+                                            pointer-events: none
+                                        }
+
+                                        #mycourses .search-filter form label:before {
+                                            content: '';
+                                            right: 6px;
+                                            top: 0;
+                                            width: 20px;
+                                            height: 20px;
+                                            position: absolute;
+                                            pointer-events: none;
+                                            display: block
+                                        }
+
+                                        #mycourses .search-filter form .wrap-input-filter {
+                                            width: calc(100% - 210px);
+                                            float: right;
+                                            border: 1px solid #ddd;
+                                            border-radius: 3px
+                                        }
+
+                                        @media (max-width:1199px) {
+                                            .body-courses-section ul#menu-courses .deltaxu {
+                                                display: none
+                                            }
+                                        }
+
+                                        @media (max-width:767px) {
+                                            #mycourses {
+                                                display: inline-block;
+                                                margin-left: -15px;
+                                                margin-right: -15px
+                                            }
+                                            #mycourses .search-filter {
+                                                width: 100%;
+                                                top: 0;
+                                                padding: 0 15px
+                                            }
+                                            #mycourses .open>.dropdown-menu {
+                                                display: block;
+                                                width: 100%
+                                            }
+                                            #mycourses .search-filter button {
+                                                width: 100%
+                                            }
+                                            #mycourses .search-filter .btn-group {
+                                                width: 100%
+                                            }
+                                            #mycourses form {
+                                                width: 100%;
+                                                margin-top: 15px
+                                            }
+                                            #mycourses ul.nav {
+                                                display: table;
+                                                font-size: 14px
+                                            }
+                                            #mycourses ul.nav li {
+                                                padding: 10px 5px;
+                                                height: auto
+                                            }
+                                        }
+
+                                        @media (max-width:543px) {
+                                            #mycourses .search-filter form label,
+                                            #mycourses .search-filter form label select {
+                                                width: 100%
+                                            }
+                                            #mycourses .search-filter form .wrap-input-filter {
+                                                width: 100%;
+                                                max-width: none
+                                            }
+                                        }
+                                    </style>
+
+                                </div>
+                                <div id="mycourses-buy">
+                                    <ul id="w1" class="clearfix k-box-card-list" role="tabpanel" data-pjax="">
+                                        <li class="col-xl-3 col-lg-4 col-md-6 col-xs-12 k-box-card" data-key="1302778">
+                                            <div class="k-box-card-wrap clearfix">
+                                                <div class="img">
+                                                    <a href="/lop-hoc/72/11326/1539" title="Kitchen Art Cooking show - Baking class" data-pjax="0">
+                                                        <img class="img-fluid" src="https://media-kyna.cdn.vccloud.vn/uploads/courses/72/img/image_url.cover-263x147.png" alt="Kitchen Art Cooking show - Baking class"
+                                                            title="Kitchen Art Cooking show - Baking class"> </a>
+                                                    <span class="time hidden-xs-down">60 phút</span>
+                                                    <div class="rating-mb hidden-sm-up">
+                                                        <b>4.9
+                                                            <i class="icon-star"></i>
+                                                        </b>
+                                                    </div>
+                                                </div>
+                                                <div class="content" style="height: 143px;">
+                                                    <h4>
+                                                        <a href="/lop-hoc/72/11326/1539" title="Kitchen Art Cooking show - Baking class" data-pjax="0">
+                                                            Kitchen Art Cooking show - Baking class </a>
+                                                    </h4>
+                                                    <a href="/giang-vien/dao-chi-anh" data-pjax="0" class="author">Đào Chi Anh</a>
+                                                    <span class="">Chuyên gia ẩm thực</span>
+                                                </div>
+                                                <div class="wrap-progress clearfix">
+                                                    <div class="point-box clearfix">
+                                                        <span class="left">Điểm hiệu quả</span>
+                                                        <span class="right">0%
+                                                            <i class="fa fa-question-circle" aria-hidden="true">
+                                                                <div class="popup-guide">Điểm hiệu quả được tính theo thời gian xem video bài học
+                                                                    và điểm các bài kiểm tra trong khóa học</div>
+                                                            </i>
+                                                        </span>
+                                                    </div>
+                                                    <div class="progress hidden-xs-down">
+                                                        <div class="progress-bar" style="width:0%"></div>
+                                                    </div>
+                                                    <div class="details-bottom clearfix">
+                                                        <div class="btn-start">
+                                                            <a href="/class" class="btn btn-play" data-pjax="0">Tiếp tục học</a>
+                                                        </div>
+                                                        <div class="s-rating hidden-xs-down" style="float:right;">
+                                                            <ul>
+                                                                <li>
+                                                                    <span>
+                                                                        <i class="icon-star color-rating"></i>
+                                                                        <i class="icon-star color-rating"></i>
+                                                                        <i class="icon-star color-rating"></i>
+                                                                        <i class="icon-star color-rating"></i>
+                                                                        <i class="icon-star color-rating"></i>
+                                                                    </span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <nav id="pager-container"></nav>
+                                    </ul>
+                                </div>
+                                <script type="text/javascript">
+                                    $(document).ready(function () {
+                                        CoursesAction.ResizeBoxProduct("#mycourses-buy");
+                                        if (window.innerWidth < 768) {
+                                            $("#mycourses-buy").removeClass("hidden-sm-down")
+                                        }
+                                        $('footer').css('z-index', '10');
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

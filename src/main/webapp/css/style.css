@@ -3292,5 +3292,231 @@ b {
     font-size: 14px;
 }
 
+/* pay check */
 
+.checkout .checkout-wrap-content {
+    width: calc(200% / 3);
+    float: left;
+}
 
+.media:first-child {
+    margin-top: 0;
+}
+
+.media {
+    overflow: hidden;
+    zoom: 1;
+}
+
+.media-left {
+    padding-right: 10px;
+    display: table-cell;
+    vertical-align: top;
+}
+
+.checkout.success .checkout-succ-title img {
+    float: left;
+    margin-right: 20px;
+}
+
+.media-body {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.media-body {
+    width: 10000px;
+}
+
+.media-body {
+    overflow: hidden;
+    zoom: 1;
+}
+
+.checkout.success .checkout-succ-title h2 {
+    margin: 10px 0px;
+    font-size: 26px;
+    text-transform: uppercase;
+    color: #50AD4E;
+    font-weight: bold;
+}
+
+.checkout.success .checkout-succ-title span {
+    font-size: 24px;
+}
+
+.checkout-banner-confirm {
+    background: url(../img/images.jpg) no-repeat top left;
+    margin-top: 40px;
+    background-size: cover;
+}
+
+.checkout-banner-confirm ul {
+    display: table;
+    width: 100%;
+    padding: 10px 10px 0px 20px;
+    color: white;
+    margin-bottom: 0px;
+}
+
+.checkout .checkout-wrap-content ul li {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.checkout p {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.checkout-confirm-content {
+    border: 1px solid #f0f0f0;
+    border-top: none;
+    padding-bottom: 15px;
+}
+
+.checkout-confirm-succ-text,
+.checkout-confirm-failed-text {
+    padding: 20px 20px 0px 20px;
+}
+
+.checkout-confirm-content div.box {
+    padding: 15px 20px;
+}
+
+.checkout-confirm-content div.box .text h4 {
+    color: #50ad4e;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.checkout-confirm-ul-bottom {
+    text-align: center;
+}
+
+.checkout-confirm-ul-bottom ul {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 0px;
+}
+
+.checkout .checkout-wrap-content ul li {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.checkout-confirm-ul-bottom ul li {
+    float: left;
+    margin: 0px 15px;
+}
+
+.checkout-confirm-ul-bottom ul li:first-child a {
+    padding: 10px 25px;
+    border: 1px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    color: #888;
+    font-size: 16px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+.checkout-confirm-ul-bottom ul li a {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.checkout-confirm-ul-bottom ul li:last-child a {
+    background: #50ad4e;
+    border-bottom: 2px solid #449342;
+    color: white;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    padding: 10px 25px;
+    font-size: 16px;
+}
+
+.checkout .wrap-content-right {
+    width: calc(100% / 3);
+    padding: 15px 15px 15px 45px;
+    float: right;
+}
+
+.wrap-content-right .fixed-flag {
+    position: fixed;
+    top: 20px;
+}
+
+.wrap-content-right .wrap {
+    position: relative;
+    border: 1px solid #aaa;
+    padding: 15px;
+    padding-bottom: 0;
+    border-radius: 5px;
+}
+
+.checkout .wrap-content-right .re-money {
+    margin-top: 15px;
+}
+
+.checkout .wrap-content-right h4 {
+    position: relative;
+}
+
+.checkout .wrap-content-right ul.list {
+    display: inline-block;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.checkout .checkout-list-price {
+    position: relative;
+    margin-left: -15px;
+    width: calc(100% + 30px);
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.checkout .wrap-content-right ul.list li:last-child {
+    border-bottom: none;
+}
+
+.checkout .wrap-content-right ul.list li {
+    display: block;
+    padding: 5px 5px 5px 0px;
+    width: 100%;
+}
+
+.checkout .checkout-list-price ul {
+    padding: 0px;
+    display: inline-block;
+    width: 100%;
+}
+
+.checkout .checkout-list-price ul li {
+    float: left;
+    margin-bottom: 5px;
+    width: 100%;
+    font-size: 14px;
+    padding-right: 5px;
+}
+
+.checkout .checkout-list-price ul li .color-orange {
+    font-size: 16px;
+}
+
+.color-orange {
+    color: #FB6A00 !important;
+}
+
+.checkout .wrap-content-right .re-money img {
+    margin-right: 15px;
+    float: left;
+}
+
+.checkout .wrap-content-right .re-money p {
+    font-size: 14px;
+}

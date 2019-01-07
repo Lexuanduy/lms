@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pay check</title>
+    <link href="https://media-kyna.cdn.vccloud.vn/css/feedback.css?v=3" rel="stylesheet">
+    <link type="text/css" href="https://media-kyna.cdn.vccloud.vn/css/main.min.css?v=152179552109" rel="stylesheet">
+    <link type="text/css" href="https://media-kyna.cdn.vccloud.vn/css/font-awesome.min.css" rel="stylesheet">
+    <link type="text/css" href="https://media-kyna.cdn.vccloud.vn/css/owl.carousel.css" rel="stylesheet">
+    <link type="text/css" href="https://media-kyna.cdn.vccloud.vn/css/owl.theme.css" rel="stylesheet">
+    <link type="text/css" href="https://media-kyna.cdn.vccloud.vn/css/owl.transitions.css" rel="stylesheet">
+    <link type="text/css" href="https://media-kyna.cdn.vccloud.vn/css/select2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/style.css">
+
+    <!-- <link rel="stylesheet"
+	href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script>
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-auth.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
+    <!-- <script src="../../../js/main.js"></script> -->
+</head>
+
+<body>
+    <div class="loading-checkout">
+    </div>
+    <div class="checkout" id="checkout-home">
+        <div class="wrap-content">
+            <div class="container">
+                <ul class="clearfix wrap-main">
+                    <li class="col-xs-12 wrap-content-left col">
+                        <div class="checkout-header clearfix">
+                            <div class="left-first col-sm-4 col-xs-6 pd0">
+                                <h2 class="logo">
+                                    <a href="/">
+                                        <img src="https://media-kyna.cdn.vccloud.vn/img/logo/Kynavnraftlogo.svg" alt="Kyna.vn" class="img-responsive">
+                                    </a>
+                                </h2>
+                            </div>
+                            <div class="right-first col-sm-8 col-xs-6 pd0">
+                                <ul>
+                                    <li>
+                                        <span class="bold text-transform">Hotline</span>
+                                    </li>
+                                    <li>
+                                        <span class="color-green bold">1900 6364 09</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <ul class="checkout-list-part pc">
+                            <li>
+                                <span class="checkout-span">Xem giỏ hàng</span>
+                                <span class="checkout-triangle-right"></span>
+                            </li>
+                            <li>
+                                <span class="checkout-triangle-left"></span>
+                                <span class="checkout-span">Chọn cách thanh toán và điền thông tin</span>
+                                <span class="checkout-triangle-right"></span>
+                            </li>
+                            <li>
+                                <span class="checkout-triangle-left"></span>
+                                <span class="checkout-span">Hoàn tất đơn hàng</span>
+                            </li>
+                        </ul>
+                        <ul class="checkout-list-part mb">
+                            <li>
+                                <span class="checkout-span">Giỏ hàng</span>
+                                <span class="checkout-triangle-right"></span>
+                            </li>
+                            <li>
+                                <span class="checkout-triangle-left"></span>
+                                <span class="checkout-span">Thanh toán</span>
+                                <span class="checkout-triangle-right"></span>
+                            </li>
+                            <li>
+                                <span class="checkout-triangle-left"></span>
+                                <span class="checkout-span">Hoàn tất</span>
+                            </li>
+                        </ul>
+                        <div class="checkout-wrap-content">
+                            <div class="checkout-succ-title clearfix">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <img src="https://media-kyna.cdn.vccloud.vn/img/icon-checkout-succ.jpg" alt="Kyna.vn" class="img-responsive">
+                                    </div>
+                                    <div class="media-body">
+                                        <h2>Đăng ký khóa học thành công</h2>
+                                        <span>Số đơn hàng
+                                            <strong>786464</strong>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkout-banner-confirm">
+                                <ul>
+                                    <li>
+                                        <p>
+                                            <span class="bold">Thông tin người mua</span>
+                                        </p>
+                                        <p>duy</p>
+                                        <p>lexuanduy07@gmail.com</p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <span class="bold">Phương thức thanh toán</span>
+                                        </p>
+                                        <p>Khóa học miễn phí</p>
+                                        <p>
+                                            <span class="bold">Số tiền thanh toán</span>
+                                        </p>
+                                        <p>0&nbsp;₫</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="checkout-confirm-content">
+                                <p class="checkout-confirm-failed-text">Cám ơn bạn đã đăng ký khóa học trên
+                                    <span class="bold color-green">Kyna.vn</span>
+                                </p>
+                                <div class="checkout-confirm-part-1 box clearfix">
+                                    <div class="col-lg-3 col-sm-4 col-xs-12 img pd0">
+                                        <img src="https://media-kyna.cdn.vccloud.vn/img/icon-checkout-confirm-1.png" alt="Kyna.vn" class="img-responsive">
+                                    </div>
+                                    <div class="col-lg-9 col-sm-8 col-xs-12 text">
+                                        <h4>Bước 1</h4>
+                                        <p>Bạn sẽ nhận email xác nhận đơn hàng và hướng dẫn bạn học trên
+                                            <span class="bold color-green">Kyna.vn </span>thông qua email
+                                            <span class="bold">lexuanduy07@gmail.com</span>.</p>
+                                    </div>
+                                </div>
+                                <div class="checkout-confirm-part-2 box clearfix">
+                                    <div class="col-lg-3 col-sm-4 col-xs-12 img pd0">
+                                        <img src="https://media-kyna.cdn.vccloud.vn/img/icon-checkout-confirm-succ-2.png" alt="Kyna.vn" class="img-responsive">
+                                    </div>
+                                    <div class="col-lg-9 col-sm-8 col-xs-12 text">
+                                        <h4>Bước 2</h4>
+                                        <p>Để bắt đầu học, bạn vào mục
+                                            <span class="bold">Khóa học của tôi </span>và click chọn nút
+                                            <span class="bold">Bắt đầu học </span>ở khóa học muốn tham gia.</p>
+                                    </div>
+                                </div>
+                                <p class="checkout-confirm-failed-text">Với bất kì thắc mắc nào, bạn có thể liên hệ qua hotline
+                                    <span>
+                                        <a href="tel:1900.6364.09" class="color-green bold">1900.6364.09</a>
+                                    </span> hoặc email đến
+                                    <span>
+                                        <a href="mailto:hotro@kyna.vn" class="color-green bold">hotro@kyna.vn</a>
+                                    </span>.
+                                </p>
+                            </div>
+                            <div class="checkout-confirm-ul-bottom">
+                                <ul>
+                                    <li>
+                                        <a href="/danh-sach-khoa-hoc">
+                                            <i class="fa fa-caret-left"></i> Chọn thêm khóa học khác</a>
+                                    </li>
+                                    <li>
+                                        <a href="/personal/course">Khóa học của tôi</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="wrap-content-right">
+                            <div class="fixed-flag"></div>
+                            <div class="wrap">
+                                <h4>
+                                    <img src="https://media-kyna.cdn.vccloud.vn/img/icon-mini-cart.png" alt="">
+                                    <b>
+                                        <span class="color-green">1 khóa học</span>
+                                    </b>
+                                </h4>
+                                <ul class="list">
+                                    <li class="clearfix" data-id="32" data-price="0" data-course-type="1">
+                                        <div class="col-sm-9 col-xs-8 title pd0 text">
+                                            <h6>Vượt qua buồn chán và lo âu
+                                                <a class="product-hidden-link" href="/vuot-qua-buon-chan-va-lo-au-p32"
+                                                    style="display: none">Vượt qua buồn chán và lo âu</a>
+                                            </h6>
+                                            <span class="product-hidden-price price" style="display: none;">Miễn phí</span>
+                                        </div>
+                                        <div class="col-sm-3 col-xs-4 price pd0">
+                                            <b>
+                                                <span class="">
+                                                    Miễn phí </span>
+                                            </b>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="checkout-list-price">
+                                    <ul>
+                                        <li>
+                                            <span>Học phí gốc</span>
+                                            <span class="price total-cost" data-price="0.00">
+                                                <b>0&nbsp;₫</b>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>Giảm giá </span>
+                                            <span class="price">
+                                                <b> 0&nbsp;₫</b>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="color-orange">
+                                                <b>THÀNH TIỀN</b>
+                                            </span>
+                                            <span class="price total-price color-orange">
+                                                <b>0&nbsp;₫</b>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                    <div class="note-cod">
+                                        <b>Lưu ý:</b>
+                                        <i>Chưa bao gồm phí vận chuyển</i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="re-money">
+                                <img src="https://media-kyna.cdn.vccloud.vn/img/checkout/hoan-tien.png" alt="">
+                                <p>Hoàn học phí trong vòng 30 ngày nếu không hài lòng về khóa học</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

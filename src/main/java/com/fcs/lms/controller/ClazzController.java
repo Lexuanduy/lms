@@ -12,7 +12,7 @@ public class ClazzController {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(ClazzController.class);
 
-	@GetMapping(value = "/clazz")
+	@GetMapping(value = "/class")
 	public String clazz() throws InterruptedException, ExecutionException {
 
 		return "views/clazz/clazz";

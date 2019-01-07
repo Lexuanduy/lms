@@ -150,8 +150,13 @@ public class HomeController {
 		return "views/home/detail";
 	}
 
-	@GetMapping(value = "/create")
+//	@GetMapping(value = "/create")
+//	public String create() throws InterruptedException, ExecutionException {
+//		return "views/course/create";
+//	}
+	
+	@GetMapping(value = "/personal/course")
 	public String create() throws InterruptedException, ExecutionException {
-		return "views/course/create";
+		return "views/home/myCourse";
 	}
 }

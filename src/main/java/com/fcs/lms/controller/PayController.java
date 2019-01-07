@@ -17,4 +17,10 @@ public class PayController {
 		
 		return "views/pay/pay";
 	}
+	
+	@GetMapping(value = "/pay-check")
+	public String payCheck() throws InterruptedException, ExecutionException {
+		
+		return "views/pay/payCheck";
+	}
 }
