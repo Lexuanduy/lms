@@ -107,7 +107,7 @@
                             </li>
                             <li class="price-list">
                                 <ul>
-                                    <li  th:each="objCourse : ${course}">
+                                    <li th:each="objCourse : ${course}">
                                         <div class="hidden-xl-up">
                                             <b>
                                                 <i class="fa fa-tags"></i>
@@ -122,7 +122,8 @@
                                             </b>
                                         </span>
                                         <span class="price-old">
-                                            (<s th:text="${objCourse.price}"></s>đ)
+                                            (
+                                            <s th:text="${objCourse.price}"></s>đ)
                                         </span>
                                         <!-- <span class="price-discount">
                                             <span class="hidden-lg-down">(</span>-34%
@@ -162,7 +163,7 @@
                             <li class="button">
                                 <ul>
                                     <li class="action-button">
-                                        <a class="btn-buy-now dang-ky-hoc hidden-md-down" href="/pay" action="AddToCart" data-ga="event" data-pid="91" style="text-align: center;"
+                                        <a class="btn-buy-now dang-ky-hoc hidden-md-down" id="buy" href="/pay" action="AddToCart" data-ga="event" data-pid="91" style="text-align: center;"
                                             category="CourseDetail" label="Tiếng Hoa cho người mới bắt đầu 1">
                                             <b>MUA NGAY</b>
                                         </a>
@@ -392,7 +393,8 @@
                                                             </strong>
                                                         </p>
                                                         <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: 150%;">
-                                                            <span style="font-size: 13.0pt; line-height: 150%; mso-ascii-font-family: 'Times New Roman'; mso-ascii-theme-font: major-latin; mso-fareast-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-hansi-theme-font: major-latin; mso-bidi-font-family: 'Times New Roman'; mso-bidi-theme-font: major-latin; mso-fareast-language: VI;" th:text="${obj.education}">
+                                                            <span style="font-size: 13.0pt; line-height: 150%; mso-ascii-font-family: 'Times New Roman'; mso-ascii-theme-font: major-latin; mso-fareast-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-hansi-theme-font: major-latin; mso-bidi-font-family: 'Times New Roman'; mso-bidi-theme-font: major-latin; mso-fareast-language: VI;"
+                                                                th:text="${obj.education}">
                                                             </span>
                                                         </p>
                                                         <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: 150%;">
@@ -401,7 +403,8 @@
                                                             </strong>
                                                         </p>
                                                         <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: 150%;">
-                                                            <span style="font-size: 13.0pt; line-height: 150%; mso-ascii-font-family: 'Times New Roman'; mso-ascii-theme-font: major-latin; mso-fareast-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-hansi-theme-font: major-latin; mso-bidi-font-family: 'Times New Roman'; mso-bidi-theme-font: major-latin; mso-fareast-language: VI;" th:text="${obj.experience}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                                            <span style="font-size: 13.0pt; line-height: 150%; mso-ascii-font-family: 'Times New Roman'; mso-ascii-theme-font: major-latin; mso-fareast-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-hansi-theme-font: major-latin; mso-bidi-font-family: 'Times New Roman'; mso-bidi-theme-font: major-latin; mso-fareast-language: VI;"
+                                                                th:text="${obj.experience}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                                                         </p>
                                                     </div>
                                                 </li>
@@ -421,8 +424,7 @@
                                         <div class="item-list clearfix">
                                             <div class="col-sm-4 col-xs-12 k-related-courses-img">
                                                 <a href="/tieng-trung-du-lich">
-                                                    <img class="img-fluid" th:src="@{${course.img}}"
-                                                        alt="Tiếng Trung du lịch" title="Tiếng Trung du lịch" style="height: auto;">
+                                                    <img class="img-fluid" th:src="@{${course.img}}" alt="Tiếng Trung du lịch" title="Tiếng Trung du lịch" style="height: auto;">
                                                 </a>
                                             </div>
                                             <div class="col-sm-8 col-xs-12 k-related-courses-text">
@@ -446,6 +448,9 @@
             </div>
         </section>
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="../../../js/buy-course.js"></script>
 </body>
 
 </html>
